@@ -28,10 +28,12 @@ $(document).ready(function () {
        ["Luigis", "Sbarro", "Pizza Hut", "Tony's Pie Company"],
        ["Creed", "Kevin", "Dwight", "All three"],
        ["Gift Cards to Chilis", "Dunder Mifflin Shirts", "Printer Cartidges", "Laptop Batteries"],
-       ["Phyllis", "Oscar", "Meredith", "Ryan"],
-                           
-
+       ["Phyllis", "Meredith", "Oscar", "Ryan"],
    ]
+
+   var answerKey = [0, 2, 2, 3, 0, 0, 2, 1, 3, 3, 1]
+
+   var currentQuestion = [];
    
     //Timer function   
     // $("#timer").text(timer);
