@@ -16,3 +16,8 @@ h1 {
     border-width: thick;
     border-color: lightblue;
 }
+
+#questions {
+    font-size: 50px;
+    font-family: Helvetica, sans-serif;
+}
