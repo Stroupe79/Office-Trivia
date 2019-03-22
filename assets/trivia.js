@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
     var timer = 30;
-   
-   // Qs and As arrays
+
+    // Qs and As arrays
     var questions = [
         "What was the name of Dwight's farm?",
         "During diversity training day, what race was Stanley's card?",
@@ -16,28 +16,44 @@ $(document).ready(function () {
         "What was did Micheal give his 'Scotts Tots' in place of paid tuition to college?",
         "Which employee did Michael hit with his car?"
     ]
-   
-   var answers = [
-       ["Schrute Farms", "Beets Unlimited", "Schrute and Sons", "It didn't have a name"]
-       ["Italian", "Indian", "Black", "Asian"],
-       ["Meredith", "Kevin", "Creed", "Angela"],
-       ["Her Father", "Dwight's Father", "Her Cousin", "Her Cat"],
-       ["Hank", "Stanley", "Roger", "They never say"],
-       ["Creed", "Micheal", "Kevin", "Dwight"],
-       ["Yale", "Dartmouth", "Cornell", "Penn State"],
-       ["Luigis", "Sbarro", "Pizza Hut", "Tony's Pie Company"],
-       ["Creed", "Kevin", "Dwight", "All three"],
-       ["Gift Cards to Chilis", "Dunder Mifflin Shirts", "Printer Cartidges", "Laptop Batteries"],
-       ["Phyllis", "Meredith", "Oscar", "Ryan"],
-   ]
 
-   var answerKey = [0, 2, 2, 3, 0, 0, 2, 1, 3, 3, 1]
+    var answers = [
+        ["Schrute Farms", "Beets Unlimited", "Schrute and Sons", "It didn't have a name"],
+        ["Italian", "Indian", "Black", "Asian"],
+        ["Meredith", "Kevin", "Creed", "Angela"],
+        ["Her Father", "Dwight's Father", "Her Cousin", "Her Cat"],
+        ["Hank", "Stanley", "Roger", "They never say"],
+        ["Creed", "Micheal", "Kevin", "Dwight"],
+        ["Yale", "Dartmouth", "Cornell", "Penn State"],
+        ["Luigis", "Sbarro", "Pizza Hut", "Tony's Pie Company"],
+        ["Creed", "Kevin", "Dwight", "All three"],
+        ["Gift Cards to Chilis", "Dunder Mifflin Shirts", "Printer Cartidges", "Laptop Batteries"],
+        ["Phyllis", "Meredith", "Oscar", "Ryan"],
+    ]
 
-   var currentQuestion = [];
+    var answerKey = [0, 2, 2, 3, 0, 0, 2, 1, 3, 3, 1]
 
-$("#questions").text(questions[0]);
-$("#answers").text(answers[0[0]]);
-   
+    var currentQuestion = 0;
+
+
+    // $("#questions").text(questions[0]);
+    // $("#answers").text(answers[0]);
+
+    function addQuestions() {
+        i = currentQuestion;
+        $("#questions").text(questions[i]);
+        f = -1;
+        answers[i].forEach(function () {
+            f++;
+            $("#answers").append("<button>" + answers[i][f]);
+        });
+
+    };
+
+    addQuestions();
+
+
+
     //Timer function   
     // $("#timer").text(timer);
 
@@ -54,7 +70,7 @@ $("#answers").text(answers[0[0]]);
 
     //display gif on correct
 
-    
+
 
 
 
