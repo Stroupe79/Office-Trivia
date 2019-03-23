@@ -39,12 +39,16 @@ $(document).ready(function () {
     
     var timer=30
 
+
+    // countdown timer
+
     var timerTick = setInterval(function() {
         $("#timer").html("<h2> <class='timerHead>" + timer + "</h2>");
             timer--;
         if(timer <= -1){
             clearInterval(timerTick);
             incorrect ++;
+            $("#incorrect").append(incorrect);
             console.log(incorrect);
         }
     }, 1000);
@@ -54,6 +58,8 @@ $(document).ready(function () {
     // $("#questions").text(questions[0]);
     // $("#answers").text(answers[0]);
 
+// displays the current question and answers
+
     function addQuestions() {
         i = currentQuestion;
         $("#questions").text(questions[i]);
@@ -61,13 +67,37 @@ $(document).ready(function () {
         answers[i].forEach(function () {
             f++;
             $("#answers").append("<div> <input type='radio' id='ans" + [f] + "' class='ansButton m-3'>" + answers[i][f]);
-        });
+            console.log(f);
+            click(f);
+        })
+   
+    
+};
+
+// click function, pass button number to check answer function
+
+function click(){
+$("#ans" + f).on("click", function(){
+    checkAns(i);
+});
+};
+
+
+// checks button press against answer key array, using the current question as the index indicatior
+
+function checkAns(i){
+        if (i === answerKey[currentQuestion]){
+            correct++;
+            $("#correct").text(correct);
+            currentQuestion++;
+            addQuestions()
+            console.log("correct");
+}
 
     };
 
     addQuestions();
 $("#correct").append(correct);
-$("#incorrect").append(incorrect);
 
 
     //Timer function   

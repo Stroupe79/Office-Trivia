@@ -1,10 +1,13 @@
 body {
     background-image: url("./images/background.jpg");
+    background-repeat: no-repeat;
     width: 100%;
+    background-size: 75%;
 }
 
 #triviaBox {
     margin-top: 10%;
+    position: relative;
 }
 
 h1 {
