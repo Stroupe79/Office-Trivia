@@ -34,7 +34,22 @@ $(document).ready(function () {
     var answerKey = [0, 2, 2, 3, 0, 0, 2, 1, 3, 3, 1]
 
     var currentQuestion = 0;
+    var correct = 0;
+    var incorrect = 0;
+    
+    var timer=30
 
+    var timerTick = setInterval(function() {
+        $("#timer").html("<h2> <class='timerHead>" + timer + "</h2>");
+            timer--;
+        if(timer <= -1){
+            clearInterval(timerTick);
+            incorrect ++;
+            console.log(incorrect);
+        }
+    }, 1000);
+
+    
 
     // $("#questions").text(questions[0]);
     // $("#answers").text(answers[0]);
@@ -45,13 +60,14 @@ $(document).ready(function () {
         f = -1;
         answers[i].forEach(function () {
             f++;
-            $("#answers").append("<button>" + answers[i][f]);
+            $("#answers").append("<div> <input type='radio' id='ans" + [f] + "' class='ansButton m-3'>" + answers[i][f]);
         });
 
     };
 
     addQuestions();
-
+$("#correct").append(correct);
+$("#incorrect").append(incorrect);
 
 
     //Timer function   

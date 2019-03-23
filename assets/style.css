@@ -21,3 +21,25 @@ h1 {
     font-size: 50px;
     font-family: Helvetica, sans-serif;
 }
+
+.ansButton {
+    height: 25px;
+    width: 25px;
+    background-color: blue;
+    border-radius: 50%;
+  }
+
+  .ansButton:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  img {
+      margin:auto;
+  }
+
+  /* .card {
+      display: inline-block;
+  }
+   */
