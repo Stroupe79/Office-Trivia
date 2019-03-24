@@ -36,29 +36,29 @@ $(document).ready(function () {
     var currentQuestion = 0;
     var correct = 0;
     var incorrect = 0;
-    
-    var timer=30;
+
+    var timer = 30;
 
 
     // countdown timer
 
-    var timerTick = setInterval(function() {
+    var timerTick = setInterval(function () {
         $("#timer").html("<h2> <class='timerHead>" + timer + "</h2>");
-            timer--;
-        if(timer <= -1){
+        timer--;
+        if (timer <= -1) {
             clearInterval(timerTick);
-            incorrect ++;
+            incorrect++;
             $("#incorrect").append(incorrect);
             console.log(incorrect);
         }
     }, 1000);
 
-    
+
 
     // $("#questions").text(questions[0]);
     // $("#answers").text(answers[0]);
 
-// displays the current question and answers
+    // displays the current question and answers
 
     function addQuestions() {
         i = currentQuestion;
@@ -66,39 +66,78 @@ $(document).ready(function () {
         f = -1;
         answers[i].forEach(function () {
             f++;
-            $("#answers").append("<div> <input type='radio' id='ans" + [f] + "' class='ansButton m-3' val='" + [f] + "'>" + answers[i][f]);
-            console.log(f);
-            click(f);
+            $("#ansT" + [f]).text(answers[i][f]);
+            // console.log(f);
         });
-   
+    };
+
+    // click function, pass button number to check answer function
+
+    $("#ans0").on("click", function () {
+        checkAns(0);
+        console.log(0);
+    })
+
+    $("#ans1").on("click", function () {
+        checkAns(1);
+        console.log(1);
+
+    })
+
+    $("#ans2").on("click", function () {
+        checkAns(2);
+        console.log(2)
+
+    })
+
+    $("#ans3").on("click", function () {
+        checkAns(3);
+        console.log(3)
+
+    })
+
+
+    // function click(){
+    // $("#ans" + f).on("click", function(){
+    //     checkAns(this.val);
+    //     console.log(this.val)
+    // });
+    // };
     
-};
-
-// click function, pass button number to check answer function
-
-function click(){
-$("#ans" + f).on("click", function(){
-    checkAns(i);
-});
-};
-
-
-// checks button press against answer key array, using the current question as the index indicatior
-
-function checkAns(i){
-        if (i === answerKey[currentQuestion]){
+    
+    // checks button press against answer key array, using the current question as the index indicatior
+    
+    function checkAns(i) {
+        if (currentQuestion === 10){
+            gameOver();
+        } else if (i === answerKey[currentQuestion]) {
             correct++;
             $("#correct").text(correct);
+            $("#gifSpace").html("<img src='./assests/images/win" + currentQuestion + "'");
             currentQuestion++;
             addQuestions();
             console.log("correct");
-};
+        } else {
+            incorrect++;
+            currentQuestion++;
+            $("#incorrect").text(incorrect);
+            addQuestions();
+        }
+        document.getElementById("ans0").checked = false;
+        document.getElementById("ans1").checked = false;
+        document.getElementById("ans2").checked = false;
+        document.getElementById("ans3").checked = false;
 
     };
 
-    addQuestions();
-$("#correct").append(correct);
+    function gameOver(){
+        clearInterval(timerTick);
+        $("#timer").text("Correct Answeers = " + correct + " | Incorrect Answers = " + incorrect);
+    }
 
+    addQuestions();
+    $("#correct").append(correct);
+    $("#incorrect").append(incorrect);
 
     //Timer function   
     // $("#timer").text(timer);

@@ -16,30 +16,47 @@
 
 <body>
     <div class="container" id="background">
-    <div id="triviaBox" class="container">
-        <div class="row">
-            <div id="questionBox" class="col-md-7 box bg-white rounded">
-                <div class="text-center m-4">
-                <img src="assets/images/logo.png" width="400px">
+        <div id="triviaBox" class="container">
+            <div class="row">
+                <div id="questionBox" class="col-md-7 box bg-white rounded">
+                    <div class="text-center m-4">
+                        <img src="assets/images/logo.png" width="400px">
+                    </div>
+                    <h1 class="text-center">Trivia Time</h1>
+                    <div id="timer" class="text-center"></div>
+                    <div class="container">
+                        <div id="questions">Questions go here</div>
+                        <div>
+                                <div class="row">
+                        <div id="answers">
+                            <div>
+                               <input type="radio" class="ansButton m-3" name="ans0" id="ans0" value="0"><label id="ansT0"></label></input>
+                            </div>
+                            <div>
+                                <input type="radio" class="ansButton m-3" id="ans1" value="1"><label id="ansT1"></label></input>
+                            </div>
+                            <div>
+                                <input type="radio" class="ansButton m-3" id="ans2" value="2"><label id="ansT2"></label></input>
+                            </div>
+                            <div>
+                                <input type="radio" class="ansButton m-3" id="ans3" value="3"><label id="ansT3"></label></input>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="container">
+                        <div class="row">
+                            <div id="gifSpace">
+                                
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
             </div>
-                <h1 class="text-center">Trivia Time</h1>
-                <div id="timer" class="text-center"></div>
-                <div id="questions">Questions go here</div>
-                <div id="answers"></div>
-                <div class="container">
-                <div class="row col-md-4 card"> 
-                    <div id="correct" class="card-body">Correct Answers:
-                        </div>
-                    </div>
-                    <div id="incorrect" class="row col-md-4 card"> 
-                        <div class="card-body">Wrong Answers:
-                        </div>
-                    </div>
-                </div>
-                </div>
         </div>
     </div>
-</div>
 </body>
 
 </html>
