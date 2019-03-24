@@ -19,14 +19,15 @@ h1 {
     border-color: lightblue;
 };
 
-#questions {
+label {
+    color: red;
     font-size: 50px;
     font-family: Helvetica, sans-serif;
 };
 
 .ansButton {
-    height: 25px;
-    width: 25px;
+    height: 125px;
+    width: 125px;
     background-color: blue;
     border-radius: 50%;
   };
@@ -40,6 +41,10 @@ h1 {
   img {
       margin:auto;
   };
+
+  #gifSpace {
+      margin: auto;
+  }
 
   /* .card {
       display: inline-block;

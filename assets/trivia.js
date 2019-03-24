@@ -46,22 +46,26 @@ $(document).ready(function () {
         $("#timer").html("<h2> <class='timerHead>" + timer + "</h2>");
         timer--;
         if (timer <= -1) {
-            clearInterval(timerTick);
             incorrect++;
             $("#incorrect").append(incorrect);
-            console.log(incorrect);
+            currentQuestion++;
+            timer = 30;
+            addQuestions();
+            console.log("Times up");
         }
     }, 1000);
 
 
 
-    // $("#questions").text(questions[0]);
-    // $("#answers").text(answers[0]);
-
     // displays the current question and answers
 
     function addQuestions() {
         i = currentQuestion;
+        if (i === 11) {
+            gameOver();
+            return;
+        }
+        console.log(i);
         $("#questions").text(questions[i]);
         f = -1;
         answers[i].forEach(function () {
@@ -96,35 +100,32 @@ $(document).ready(function () {
 
     })
 
-
-    // function click(){
-    // $("#ans" + f).on("click", function(){
-    //     checkAns(this.val);
-    //     console.log(this.val)
-    // });
-    // };
-    
+  
     
     // checks button press against answer key array, using the current question as the index indicatior
     
     function checkAns(i) {
         if (currentQuestion === 10){
+            $("#gifSpace").html("<img src='./assets/images/dwight-wigs.gif' height=300px>");
             gameOver();
         } else if (i === answerKey[currentQuestion]) {
             correct++;
             $("#correct").text(correct);
-            $("#timer").append("<img src='./assets/images/win" + currentQuestion + ".gif'>");
+            $("#gifSpace").html("<img src='./assets/images/win" + currentQuestion + ".gif' height=300px width=450px;>");
             console.log(currentQuestion);
             currentQuestion++;
             addQuestions();
             console.log("correct");
             timer = 30;
+
         } else {
             incorrect++;
             currentQuestion++;
             $("#incorrect").text(incorrect);
+            $("#gifSpace").html("<img src='./assets/images/incorrect.gif' height=300px>");
             addQuestions();
             timer = 30;
+
         }
         document.getElementById("ans0").checked = false;
         document.getElementById("ans1").checked = false;
@@ -135,26 +136,11 @@ $(document).ready(function () {
 
     function gameOver(){
         clearInterval(timerTick);
-        $("#timer").text("Correct Answeers = " + correct + " | Incorrect Answers = " + incorrect);
-    }
+        $("#timer").html("<h5> Correct Answeers = " + correct + " | Incorrect Answers = " + incorrect +"</h5>");
+    };
+
 
     addQuestions();
-    $("#correct").append(correct);
-    $("#incorrect").append(incorrect);
-
-    //Timer function   
-    // $("#timer").text(timer);
-
-    // setInterval(function () {
-    //     timer--;
-    //     if (timer <= 0) {
-    //         alert("Times up")
-    //     }
-    // });
-
-    //correct answer function
-
-    //incorrect answer function
 
     //display gif on correct
 
