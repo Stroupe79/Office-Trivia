@@ -113,7 +113,8 @@ $(document).ready(function () {
         } else if (i === answerKey[currentQuestion]) {
             correct++;
             $("#correct").text(correct);
-            $("#timer").html("<img src='./assests/images/win" + currentQuestion + ".gif'");
+            $("#timer").append("<img src='./assets/images/win" + currentQuestion + ".gif'>");
+            console.log(currentQuestion);
             currentQuestion++;
             addQuestions();
             console.log("correct");
