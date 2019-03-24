@@ -37,7 +37,7 @@ $(document).ready(function () {
     var correct = 0;
     var incorrect = 0;
     
-    var timer=30
+    var timer=30;
 
 
     // countdown timer
@@ -66,10 +66,10 @@ $(document).ready(function () {
         f = -1;
         answers[i].forEach(function () {
             f++;
-            $("#answers").append("<div> <input type='radio' id='ans" + [f] + "' class='ansButton m-3'>" + answers[i][f]);
+            $("#answers").append("<div> <input type='radio' id='ans" + [f] + "' class='ansButton m-3' val='" + [f] + "'>" + answers[i][f]);
             console.log(f);
             click(f);
-        })
+        });
    
     
 };
@@ -90,9 +90,9 @@ function checkAns(i){
             correct++;
             $("#correct").text(correct);
             currentQuestion++;
-            addQuestions()
+            addQuestions();
             console.log("correct");
-}
+};
 
     };
 

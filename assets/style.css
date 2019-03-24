@@ -1,36 +1,35 @@
 body {
     background-image: url("./images/background.jpg");
     background-repeat: no-repeat;
-    width: 100%;
-    background-size: 75%;
+    background-size: cover;
+
 }
 
 #triviaBox {
     margin-top: 10%;
-    position: relative;
-}
+};
 
 h1 {
     text-align: center;
-}
+};
 
 #questionBox {
     border-style: groove;
     border-width: thick;
     border-color: lightblue;
-}
+};
 
 #questions {
     font-size: 50px;
     font-family: Helvetica, sans-serif;
-}
+};
 
 .ansButton {
     height: 25px;
     width: 25px;
     background-color: blue;
     border-radius: 50%;
-  }
+  };
 
   .ansButton:after {
     content: "";
@@ -40,7 +39,7 @@ h1 {
 
   img {
       margin:auto;
-  }
+  };
 
   /* .card {
       display: inline-block;
