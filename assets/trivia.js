@@ -113,15 +113,17 @@ $(document).ready(function () {
         } else if (i === answerKey[currentQuestion]) {
             correct++;
             $("#correct").text(correct);
-            $("#gifSpace").html("<img src='./assests/images/win" + currentQuestion + "'");
+            $("#timer").html("<img src='./assests/images/win" + currentQuestion + ".gif'");
             currentQuestion++;
             addQuestions();
             console.log("correct");
+            timer = 30;
         } else {
             incorrect++;
             currentQuestion++;
             $("#incorrect").text(incorrect);
             addQuestions();
+            timer = 30;
         }
         document.getElementById("ans0").checked = false;
         document.getElementById("ans1").checked = false;
