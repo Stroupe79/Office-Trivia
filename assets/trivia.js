@@ -9,7 +9,7 @@ $(document).ready(function () {
         "Which one of the actors for these characters is a real life famous musician?",
         "Who does Angela name her son after?",
         "What is the name of the security guard?",
-        "Who said 'Bankruptcy is natures do-ver.'?",
+        "Who said 'Bankruptcy is natures do-ver'?",
         "What college did Andy attend?",
         "What is Micheal's favorite pizza joint in New York?",
         "Who dressed as 'The Joker' for Halloween?",
@@ -106,12 +106,12 @@ $(document).ready(function () {
     
     function checkAns(i) {
         if (currentQuestion === 10){
-            $("#gifSpace").html("<img src='./assets/images/dwight-wigs.gif' height=300px>");
+            $("#gifSpace").html("<img src='./assets/images/dwight-wigs.gif' height=200px>");
             gameOver();
         } else if (i === answerKey[currentQuestion]) {
             correct++;
             $("#correct").text(correct);
-            $("#gifSpace").html("<img src='./assets/images/win" + currentQuestion + ".gif' height=300px width=450px;>");
+            $("#gifSpace").html("<img src='./assets/images/win" + currentQuestion + ".gif' height=200px width=350px;>");
             console.log(currentQuestion);
             currentQuestion++;
             addQuestions();
@@ -122,7 +122,7 @@ $(document).ready(function () {
             incorrect++;
             currentQuestion++;
             $("#incorrect").text(incorrect);
-            $("#gifSpace").html("<img src='./assets/images/incorrect.gif' height=300px>");
+            $("#gifSpace").html("<img src='./assets/images/incorrect.gif' height=200px>");
             addQuestions();
             timer = 30;
 

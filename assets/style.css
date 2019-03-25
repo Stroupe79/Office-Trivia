@@ -3,50 +3,50 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 
-};
+}
 
 #triviaBox {
     margin-top: 10%;
-};
+}
 
 h1 {
     text-align: center;
-};
+}
+
+#questions {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+}
 
 #questionBox {
     border-style: groove;
     border-width: thick;
     border-color: lightblue;
-};
+    position: relative;
+}
 
 label {
-    color: red;
-    font-size: 50px;
-    font-family: Helvetica, sans-serif;
-};
+    font-size: 2em;
+    font-family: Impact, sans-serif;
+}
 
 .ansButton {
-    height: 125px;
-    width: 125px;
-    background-color: blue;
+    height: 1em;
+    width: 1em;
     border-radius: 50%;
-  };
+  }
 
   .ansButton:after {
     content: "";
     position: absolute;
     display: none;
-  };
+  }
 
   img {
       margin:auto;
-  };
+  }
 
   #gifSpace {
       margin: auto;
   }
 
-  /* .card {
-      display: inline-block;
-  }
-   */
