@@ -1,9 +1,8 @@
 $(document).ready(function () {
 
-    var timer = 30;
 
     // Qs and As arrays
-    var questions = [
+    const questions = [
         "What was the name of Dwight's farm?",
         "During diversity training day, what race was Stanley's card?",
         "Which one of the actors for these characters is a real life famous musician?",
@@ -17,7 +16,7 @@ $(document).ready(function () {
         "Which employee did Michael hit with his car?"
     ]
 
-    var answers = [
+    const answers = [
         ["Schrute Farms", "Beets Unlimited", "Schrute and Sons", "It didn't have a name"],
         ["Italian", "Indian", "Black", "Asian"],
         ["Meredith", "Kevin", "Creed", "Angela"],
@@ -31,7 +30,7 @@ $(document).ready(function () {
         ["Phyllis", "Meredith", "Oscar", "Ryan"],
     ]
 
-    var answerKey = [0, 2, 2, 3, 0, 0, 2, 1, 3, 1]
+    const answerKey = [0, 2, 2, 3, 0, 0, 2, 1, 3, 1]
 
     var currentQuestion = 0;
     var correct = 0;
